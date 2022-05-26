@@ -1,25 +1,29 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { useState } from "react";
 import {
   AppShell,
-  Navbar,
   Header,
   Anchor,
-  Aside,
-  Text,
-  Button,
-  MediaQuery,
-  Burger,
   useMantineTheme,
   MantineProvider,
+  createStyles,
 } from "@mantine/core";
 import Link from "next/link";
+
+const useStyles = createStyles((theme, _params) => ({
+  mdNavLinks: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+}));
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
   const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
+  theme.colorScheme = "dark";
+
+  const { classes } = useStyles();
 
   return (
     <>
@@ -35,8 +39,8 @@ export default function App(props: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          /** Put your mantine theme override here */
-          colorScheme: "light",
+          colorScheme: "dark",
+          primaryColor: "green",
         }}
       >
         <AppShell
@@ -58,18 +62,14 @@ export default function App(props: AppProps) {
                   height: "100%",
                 }}
               >
-                <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-                  <Burger
-                    opened={opened}
-                    onClick={() => setOpened((o) => !o)}
-                    size="sm"
-                    color={theme.colors.gray[6]}
-                    mr="xl"
-                  />
-                </MediaQuery>
-                <Link href="/" passHref>
-                  <Anchor>Home</Anchor>
-                </Link>
+                <div className={classes.mdNavLinks}>
+                  <Link href="/" passHref>
+                    <Anchor>Project Legend</Anchor>
+                  </Link>
+                  <Link href="/blog" passHref>
+                    <Anchor>Blog</Anchor>
+                  </Link>
+                </div>
               </div>
             </Header>
           }
