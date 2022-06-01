@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Button, createStyles } from "@mantine/core";
+import { Button, createStyles, Image, List, Text, Title } from "@mantine/core";
 
 const useStyles = createStyles((theme, _params) => ({
   landingPageContainer: {
-    maxWidth: theme.breakpoints.lg,
+    maxWidth: theme.breakpoints.md,
     margin: "auto",
   },
 
@@ -21,6 +21,25 @@ const useStyles = createStyles((theme, _params) => ({
 
   playRpgsContainer: {
     display: "flex",
+    justifyContent: "space-evenly",
+    marginTop: "100px",
+  },
+
+  halfText: {
+    width: "400px",
+  },
+
+  featureHeading: {
+    fontSize: "48px",
+  },
+
+  featureCopy: {
+    marginTop: "24px",
+    fontSize: "24px",
+  },
+
+  halfImg: {
+    width: "400px",
   },
 }));
 
@@ -38,19 +57,51 @@ const Home: NextPage = () => {
       </Head>
 
       <div className={classes.heroContainer}>
-        <h1>Your online RPG one stop shop</h1>
+        <h1>What is there was a place...</h1>
         <h2>
-          Play your favourite RPGs with friends and strangers. Create RPG
-          scenarios and campaigns. All online.
+          ...where you could play RPGs online with your friends or strangers,
+          create your own scenarios and campaigns and be part of a global
+          community of RPG fans?
         </h2>
-        <Button className={classes.heroButton}>Get started</Button>
+        <Button className={classes.heroButton}>Enter now</Button>
       </div>
       <div className={classes.playRpgsContainer}>
-        <div>
-          <h3>Play RPGs</h3>
-          <p>Join your friends in a live play session. </p>
+        <div className={classes.halfText}>
+          <Title className={classes.featureHeading} order={2}>
+            Play your favourite RPGs
+          </Title>
+          <Text className={classes.featureCopy}>
+            Play with others using our virtual tabletop with everything you need
+            to play without leaving the platform, from dice to chat.
+          </Text>
         </div>
-        <div></div>
+        <div className={classes.halfImg}>
+          <Image src="/images/pltri.png" alt="" />
+        </div>
+        {/* <div>
+          <Title order={3}>
+            Simple, interoperable and composable story builder suited for the
+            simplest to the most complex of stories.
+          </Title>
+        </div>
+        <div>
+          <Title order={3}>
+            Game board with adjustable grid and fog of war.
+          </Title>
+        </div>
+        <div>
+          <Title order={3}>Adjustable game grid density.</Title>
+        </div>
+        <div>
+          <Title order={3}>
+            Layer-based world builder. Infinity granularity; infinite scale.
+          </Title>
+        </div>
+        <div>
+          <Title order={3}>
+            You own your stories. Easy plaintext exports of all assets.
+          </Title>
+        </div> */}
       </div>
     </div>
   );
