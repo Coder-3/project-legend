@@ -78,30 +78,6 @@ const Home: NextPage = () => {
         <div className={classes.halfImg}>
           <Image src="/images/pltri.png" alt="" />
         </div>
-        {/* <div>
-          <Title order={3}>
-            Simple, interoperable and composable story builder suited for the
-            simplest to the most complex of stories.
-          </Title>
-        </div>
-        <div>
-          <Title order={3}>
-            Game board with adjustable grid and fog of war.
-          </Title>
-        </div>
-        <div>
-          <Title order={3}>Adjustable game grid density.</Title>
-        </div>
-        <div>
-          <Title order={3}>
-            Layer-based world builder. Infinity granularity; infinite scale.
-          </Title>
-        </div>
-        <div>
-          <Title order={3}>
-            You own your stories. Easy plaintext exports of all assets.
-          </Title>
-        </div> */}
       </div>
     </div>
   );
